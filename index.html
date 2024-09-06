@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+       #container{
+        border:2px solid black;
+        height:50vh;
+        background-color:rgb(13, 237, 162);
+        text-align: center;
+        padding-top: 15%;
+       }
+       button{
+        height:3rem;
+        width:8.5rem;
+        border-radius: 50px;
+        color:crimson;
+        background-color: rgb(178, 201, 245);
+       } 
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <button><b>Click Me</b></button>
+        <h2 class="hexcode"></h2>
+        <p></p>
+
+    </div>
+
+
+    <script>
+        let txt = [
+            "“We cannot solve problems with the kind of thinking we employed when we came up with them.” —Albert Einstein",
+            "“Do the best you can until you know better. Then when you know better, do better.” — Maya Angelou",
+            "“The only thing standing between you and outrageous success is continuous progress you need discipline.”— Dan Waldschmidt",
+            "“If you want to live a happy life, tie it to a goal, not to people or things.” ― Albert Einstein",
+            "“Our greatest weakness lies in giving up. The most certain way to succeed is always to try just one more time.” – Thomas A. Edison",
+            "“It's hard to beat a person who never gives up.”— Babe Ruth",
+            "“The only way to do great work is to love what you do. If you haven’t found it yet, keep looking. Don’t settle.” —Steve Jobs",
+            "“If opportunity doesn’t knock, build a door.” —Milton Berle",
+            "“One important key to success is self-confidence. An important key to self-confidence is preparation.” – Arthur Ashe",
+            "“Failure is not the opposite of success, it’s part of success” ― Arianna Huffington",
+            "“The biggest guru-mantra is: never share your secrets with anybody. It will destroy you.” — Chanakya",
+            "“Avoid him who talks sweetly before you but tries to ruin you behind your back, for he is like a pitcher full of poison with milk on top.” — Chanakya",
+        ];
+
+        let btn = document.getElementsByTagName("button");
+        btn[0].addEventListener("click", () => {
+            let randomval = (Math.floor(Math.random()*89999)+100000);
+            let hexcode = document.getElementsByClassName("hexcode");
+            hexcode[0].innerHTML = `#${randomval}`;
+            let para=document.getElementsByTagName("p");
+            let quotes=txt[Math.floor(Math.random()*txt.length)];
+            para[0].innerHTML=quotes;
+            para[0].style.fontStyle="italic";
+            para[0].style.color="white";
+            para[0].style.fontSize="1.5rem";
+            btn[0].style.backgroundColor=`#${randomval}`;
+            divbg=document.getElementById("container");
+            divbg.style.backgroundColor=`#${randomval}`;
+        })
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+
+</html>
